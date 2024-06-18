@@ -20,7 +20,7 @@ export default function HomePage() {
         <label className="text-green-400 cursor-pointer hover:text-green-600 duration-200">
           upload <input className="hidden" type="file" accept=".mp3,.wave" />
         </label>
-        a mp3 file
+        a mp3 file(audio)
       </p>
       <p className="italic text-slate-500">Free now free forever</p>
     </main>
