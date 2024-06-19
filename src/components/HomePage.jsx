@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function HomePage() {
+export default function HomePage(props) {
+  const { setAudioStream, setFile } = props;
   return (
     <main className="flex-1  p-4 flex flex-col gap-3 text-center sm:gap-4 md:gap-5 justify-center pb-20">
       <h1 className="font-semibold text-5xl sm:tex-6xl md:text-7x1">
@@ -18,7 +19,16 @@ export default function HomePage() {
         {" "}
         Or{" "}
         <label className="text-green-400 cursor-pointer hover:text-green-600 duration-200">
-          upload <input className="hidden" type="file" accept=".mp3,.wave" />
+          upload{" "}
+          <input
+            onChange={(e) => {
+              const tempFile = e.target.files(0);
+              setFile(tempFile);
+            }}
+            className="hidden"
+            type="file"
+            accept=".mp3,.wave"
+          />
         </label>
         a mp3 file(audio)
       </p>
